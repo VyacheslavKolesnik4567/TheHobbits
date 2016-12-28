@@ -1,0 +1,24 @@
+﻿<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr class="thead">
+            <th ng-click="sortparam='Id'">Hobbit photo</th>
+            <th ng-click="sortparam='Name'">Hobbit name</th>
+            <th ng-click="sortparam='Age'">Hobbit age</th>
+            <td><b>Hobbit weapon</b></td>
+            <td><b>Actions</b></td>
+        </tr>
+    </thead>
+    <tr ng-repeat="hobbit in hobbits | orderBy: sortparam">
+        <td>
+            <img class="img-circle hobbitPhoto" ng-src="{{hobbit.Photo}}"/>            
+        </td>
+        <td>{{hobbit.Name}}</td>
+        <td>{{hobbit.Age}}</td>
+        <td>{{hobbit.Weapon.Name}}</td>
+        <td>
+            <button class="btn btn-info col-md-3 col-md-offset-1" ng-click="moreInfo(hobbit)">More info</button>
+            <button class="btn btn-danger col-md-3 col-md-offset-1" ng-click="remove(hobbit.Id, hobbit.Photo)">Remove</button>
+            <button class="btn btn-success col-md-3 col-md-offset-1" ng-click="edit(hobbit)">Edit</button>
+        </td>
+    </tr>
+</table> 

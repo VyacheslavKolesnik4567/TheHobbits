@@ -1,0 +1,39 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Add hobbit</h3>
+</div>
+
+<div class="modal-body media-left center-block">
+    <form class="form-horizontal col-md-12 css-form" name="hobbitForm">
+        <fieldset>
+            <label>Name</label>
+            <input type="text" required placeholder="Input name" ng-model="hobbit.Name" class="form-group form-control" />
+            
+            <label>Age</label>
+            <input type="number" required placeholder="Input age" ng-model="hobbit.Age" class="form-group form-control" />
+            
+            <label>Photo</label><br />
+            <!--Radio buttons to switching between link and file attachment-->
+            <input type="radio" ng-value="true" ng-model="link"/> Link
+            <input type="radio" ng-value="false" ng-model="link"/> File
+
+            <!--Input type "file"-->
+            <input type="file" ng-class="{'ng-invalid ng-touched':hobbit.PhotoFile==undefined && submited}" ng-show="!link" placeholder="Select the file" accept="image/jpeg,image/png" fileread="hobbit.PhotoFile" class="form-group form-control"/>
+            <!--Link textBox-->
+            <input type="text" ng-class="{'ng-touched':submited}" ng-required="link" ng-show="link" placeholder="Paste the link" ng-model="hobbit.Photo" class="form-group form-control" />
+            
+            <label>Weapon</label>
+            <select required ng-model="hobbit.WeaponId" class="form-group form-control">
+                <option value="" disabled>Select the weapon</option>
+                <option ng-repeat="weapon in weapons" value="{{weapon.Id}}">{{weapon.Name}}</option>
+            </select>
+            
+            <label>Input info</label>
+            <textarea ng-model="hobbit.Info" class="form-group form-control"></textarea>
+        </fieldset>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-danger" ng-click="cancel()">Close</button>
+    <button class="btn btn-primary" type="button" ng-click="save(hobbitForm);submited=true">OK</button>  
+</div>

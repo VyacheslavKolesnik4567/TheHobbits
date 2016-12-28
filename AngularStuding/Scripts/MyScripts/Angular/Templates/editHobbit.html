@@ -1,0 +1,43 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Edit hobbit</h3>
+</div>
+
+<div class="modal-body media-left center-block">
+    <form class="form-horizontal col-md-12 css-form" name="hobbitForm">
+        <fieldset>            
+            <label>Name</label>
+            <input type="text" required placeholder="Input name" ng-model="hobbit.Name" class="form-group form-control" />
+           
+             <label>Age</label>
+            <input type="number" required placeholder="Input age" ng-model="hobbit.Age" class="form-group form-control" />
+            
+            <label>Photo</label>
+            <div ng-show="!changeNewImg">
+                <img ng-src="{{hobbit.Photo}}" style="width:40px;height:40px;" class="img-circle" /><br /><br />
+                <a href="" ng-click="changeNewImg=true;hobbit.Photo=''">Select new photo</a><br /><br />
+            </div>        
+            <div ng-show="changeNewImg">
+                <!--Radio buttons to switching between link and file attachment-->
+                <input type="radio" ng-value="true" ng-model="link" /> Link
+                <input type="radio" ng-value="false" ng-model="link"/> File
+                <!--Input type "file"-->
+                <input type="file" ng-if="!link" placeholder="Select the file" accept="image/jpeg,image/png" fileread="hobbit.PhotoFile" class="form-group form-control" />
+                <!--Link textBox-->
+                <input type="text" ng-show="link" placeholder="Paste the link" ng-model="hobbit.NewPhotoLink" class="form-group form-control" />
+            </div>
+            
+            <label>Weapon</label>
+            <select required ng-options="option.Name for option in weapons track by option.Id" ng-model="hobbit.Weapon" class="form-group form-control">              
+            </select>
+            
+            <label>Info</label>
+            <textarea ng-model="hobbit.Info" class="form-group form-control"></textarea>
+        </fieldset>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-danger" ng-click="cancel()">Close</button>
+    <button class="btn btn-primary" type="button" ng-click="save(hobbitForm)">OK</button>
+</div>
+

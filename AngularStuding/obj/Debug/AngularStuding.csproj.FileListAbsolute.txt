@@ -1,0 +1,78 @@
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\ApplicationInsights.config
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\AngularStuding.dll.config
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\AngularStuding.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\AngularStuding.pdb
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.Web.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.WindowsServer.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.ApplicationInsights.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.Web.Infrastructure.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Helpers.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Mvc.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Razor.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Webpages.Deployment.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Webpages.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Webpages.Razor.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.Web.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.AI.WindowsServer.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\Microsoft.ApplicationInsights.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Razor.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Webpages.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Webpages.Deployment.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Webpages.Razor.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Helpers.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\bin\System.Web.Mvc.xml
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\obj\Debug\AngularStuding.csprojResolveAssemblyReference.cache
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\obj\Debug\AngularStuding.dll
+c:\users\вячеслав\documents\visual studio 2015\Projects\AngularStuding\AngularStuding\obj\Debug\AngularStuding.pdb
+C:\Users\Вячеслав\Documents\Visual Studio 2015\Projects\AngularStuding\AngularStuding\bin\Newtonsoft.Json.dll
+C:\Users\Вячеслав\Documents\Visual Studio 2015\Projects\AngularStuding\AngularStuding\bin\Newtonsoft.Json.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\ApplicationInsights.config
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\AngularStuding.dll.config
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\AngularStuding.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\AngularStuding.pdb
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.DependencyCollector.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.Web.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.WindowsServer.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.ApplicationInsights.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.Web.Infrastructure.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Newtonsoft.Json.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Helpers.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Mvc.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Razor.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Webpages.Deployment.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Webpages.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Webpages.Razor.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.DependencyCollector.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.Web.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.AI.WindowsServer.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Microsoft.ApplicationInsights.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\Newtonsoft.Json.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Razor.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Webpages.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Webpages.Deployment.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Webpages.Razor.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Helpers.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Mvc.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\obj\Debug\AngularStuding.csprojResolveAssemblyReference.cache
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\obj\Debug\AngularStuding.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\obj\Debug\AngularStuding.pdb
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\EntityFramework.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\EntityFramework.SqlServer.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\EntityFramework.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\EntityFramework.SqlServer.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Net.Http.Formatting.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Http.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Http.WebHost.dll
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Net.Http.Formatting.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Http.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Http.WebHost.xml

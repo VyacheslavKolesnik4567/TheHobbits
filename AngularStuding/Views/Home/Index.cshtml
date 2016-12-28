@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/MyScripts/Angular/Services/HobbitsService.js"></script>
+<script src="~/Scripts/MyScripts/Angular/Services/WeaponsService.js"></script>
+<script src="~/Scripts/MyScripts/Angular/Controllers/hobbitsController.js"></script>
+<script src="~/Scripts/MyScripts/Angular/Controllers/HobbitModalInstanceController.js"></script>
+<script src="~/Scripts/MyScripts/Angular/Directives/HobbitDetailDirective.js"></script>
+<script src="~/Scripts/MyScripts/Angular/Directives/HobbitsTableDirective.js"></script>
+<script src="~/Scripts/MyScripts/Angular/Directives/FiliReadDirective.js"></script>
+
+<h2>Index</h2>
+<div ng-controller="hobbitsController" class="hobbitsDiv col-md-12 col-lg-12">
+    <img src="~/Content/Images/loading.gif" ng-show="loading" class="center-block loadingImg"/>
+    <button ng-show="hobbits!=undefined" class="btn btn-default" ng-click="addHobbit()">Add hobbit</button><br />
+    <hobbits-table ng-show="hobbits!=undefined" source="hobbits"></hobbits-table>
+</div>
+
