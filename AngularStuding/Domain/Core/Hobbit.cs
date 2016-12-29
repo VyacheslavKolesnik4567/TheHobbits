@@ -19,6 +19,9 @@ namespace AngularStuding.Domain.Core
         public int WeaponId { get; set; }
         public string Photo { get; set; }
         public string Info { get; set; }
+        [JsonIgnore]
+        [MaxLength(50)]
+        public string Password { get; set; }
 
         [JsonIgnore]
         public Weapon Weapon { get; set; }

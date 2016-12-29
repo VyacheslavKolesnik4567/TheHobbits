@@ -31,7 +31,7 @@ namespace AngularStuding.Domain.Infrastructure.Data
         {
             try
             {
-                return db.Hobbits.Find(id);
+                return db.Hobbits.FirstOrDefault(x=>x.Id == id);
             }
             catch
             {

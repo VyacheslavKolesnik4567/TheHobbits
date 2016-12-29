@@ -31,7 +31,7 @@ namespace AngularStuding.Domain.Infrastructure.Data
         {
             try
             {
-                return db.Weapons.Find(id);
+                return db.Weapons.FirstOrDefault(x => x.Id == id);
             }
             catch
             {

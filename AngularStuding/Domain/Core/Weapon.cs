@@ -15,6 +15,9 @@ namespace AngularStuding.Domain.Core
         public int Id { get; set; }
         public string Name { get; set; }
         public string Picture { get; set; }
+        [JsonIgnore]
+        [MaxLength(50)]
+        public string Password { get; set; }
 
         [JsonIgnore]
         public ICollection<Hobbit> Hobbits { get; set; }

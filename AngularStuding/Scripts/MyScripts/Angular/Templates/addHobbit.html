@@ -26,7 +26,11 @@
                 <option value="" disabled>Select the weapon</option>
                 <option ng-repeat="weapon in weapons" value="{{weapon.Id}}">{{weapon.Name}}</option>
             </select>
-            
+
+            <label>Password</label>
+            <input type="password" placeholder="Input password" ng-model="hobbit.Password" class="form-group form-control" />
+            <label>Confirm password</label>
+            <input type="password" placeholder="Confirm password" compare-to="hobbit.Password" ng-model="ConfirmPassword" class="form-group form-control" />
             <label>Input info</label>
             <textarea ng-model="hobbit.Info" class="form-group form-control"></textarea>
         </fieldset>

@@ -4,6 +4,7 @@
     weaponsService.async().then(function (weapons) {
         $scope.weapons = weapons;
         hobbitsLoad();
+        
     });
 
     var hobbitsLoad = function () {
@@ -24,7 +25,7 @@
     $scope.moreInfo = function (hobbit) {
         var size = (!hobbit.Info) ?'sm':'md';
         var modalInstance = $uibModal.open({
-            template: '<hobbit-detail></hobbit-detail>',
+            templateUrl: "Scripts/MyScripts/Angular/Templates/HobbitDetail.html",
             controller: function ($scope) {
                 $scope.hobbit = hobbit;
                 $scope.cancel = function () {
@@ -56,6 +57,8 @@
             var formData = new FormData();
             formData.append("PhotoFile", hobbit.PhotoFile);
             formData.append("Age", hobbit.Age);
+            if (hobbit.Password != undefined)
+                formData.append("Password", hobbit.Password);
             formData.append("WeaponId", hobbit.WeaponId);
             formData.append("Name", hobbit.Name);
             if (hobbit.Info != undefined)
@@ -126,6 +129,8 @@
             formData.append("Id", hobbit.Id);
             formData.append("PhotoFile", hobbit.PhotoFile);
             formData.append("Age", hobbit.Age);
+            if (hobbit.Password != undefined)
+                formData.append("Password", hobbit.Password);
             formData.append("WeaponId", hobbit.Weapon.Id);
             formData.append("Name", hobbit.Name);
             if (hobbit.Info != null)
@@ -180,45 +185,59 @@
 
     //Remove hobbit
     $scope.remove = function (id, photo) {
-        //Http request to the server
-        $http({ method: "POST", url: "Hobbit/RemoveHobbit", params: { id: id, photo: photo } })
-                //Success function
-                .success(function (data, status, headers, config) {
-                    if (data.Code == 202) {
-                        $uibModal.open({
-                            templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
-                            animation: true,
-                            controller: function ($scope) {
-                                $scope.message = { Status: "Success", Description: "Hobbit removed succesfully." };
-                            },
-                            size: 'sm',
-                        });
-                        hobbitsLoad();
-                    }
-                    else
-                        $uibModal.open({
-                            templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
-                            animation: true,
-                            controller: function ($scope) {
-                                $scope.message = {
-                                    Status: "Failed", Description: "Hobbit didn't removed. " + data.Description
-                                };
-                            },
-                            size: 'sm',
-                        });
+        var modalInstance = $uibModal.open({
+            templateUrl: "Scripts/MyScripts/Angular/Templates/removeHobbit.html",
+            controller: function ($scope) {
+                $scope.cancel = function () {
+                    modalInstance.dismiss('cancel');
+                };
+                $scope.remove = function () {
+                    modalInstance.close($scope.password);
+                };
+            },
+            size: 'sm'
+        });
 
-                })
-                //Error function
-                .error(function (data, status, headers, config) {
-                    $uibModal.open({
-                        templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
-                        animation: true,
-                        controller: function ($scope) {
-                            $scope.message = { Status: "Failed", Description: "Hobbit didn't removed. Problems with server connection." }
-                        },
-                        size: 'sm',
+        modalInstance.result.then(function (password) {
+            //Http request to the server
+            $http({ method: "POST", url: "Hobbit/RemoveHobbit", params: { id: id, photo: photo, password: password } })
+                    //Success function
+                    .success(function (data, status, headers, config) {
+                        if (data.Code == 202) {
+                            $uibModal.open({
+                                templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
+                                animation: true,
+                                controller: function ($scope) {
+                                    $scope.message = { Status: "Success", Description: "Hobbit removed succesfully." };
+                                },
+                                size: 'sm',
+                            });
+                            hobbitsLoad();
+                        }
+                        else
+                            $uibModal.open({
+                                templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
+                                animation: true,
+                                controller: function ($scope) {
+                                    $scope.message = {
+                                        Status: "Failed", Description: "Hobbit didn't removed. " + data.Description
+                                    };
+                                },
+                                size: 'sm',
+                            });
+
+                    })
+                    //Error function
+                    .error(function (data, status, headers, config) {
+                        $uibModal.open({
+                            templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
+                            animation: true,
+                            controller: function ($scope) {
+                                $scope.message = { Status: "Failed", Description: "Hobbit didn't removed. Problems with server connection." }
+                            },
+                            size: 'sm',
+                        });
                     });
-                });
-    };
-
+        })
+    }
 });

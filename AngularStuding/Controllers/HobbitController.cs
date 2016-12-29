@@ -1,7 +1,6 @@
 ﻿using AngularStuding.Core;
 using AngularStuding.Domain.Infrastructure.Data;
 using System;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -27,7 +26,7 @@ namespace AngularStuding.Controllers
             return db.Hobbits.GetItems().ToJson();
         }
 
-        public string AddHobbit(string Name, int Age, string Photo, int WeaponId, string Info, HttpPostedFileBase PhotoFile)
+        public string AddHobbit(string Name, int Age, string Photo, int WeaponId, string Info, string Password, HttpPostedFileBase PhotoFile)
         {
             try
             {
@@ -49,7 +48,8 @@ namespace AngularStuding.Controllers
                     Age = Age,
                     Info = Info,
                     Photo = Photo,
-                    WeaponId = WeaponId
+                    WeaponId = WeaponId,
+                    Password = Password
                 });
                 db.Save();
 
@@ -61,13 +61,15 @@ namespace AngularStuding.Controllers
             }
         }
 
-        public string RemoveHobbit(int? id, string photo)
+        public string RemoveHobbit(int? id, string photo, string password)
         {
             try
             {
                 bool result = false;
                 if (id != null)
                 {
+                    if (db.Hobbits.Get((int)id).Password != password)
+                        return new RequestResult(ResultCode.HobbitWrongPassword, "Wrong password.").ToJson();
                     result = db.Hobbits.Remove((int)id);
                     db.Save();
                     new ImageHelper().RemoveImage(photo);
@@ -83,10 +85,13 @@ namespace AngularStuding.Controllers
             }
         }
 
-        public string EditHobbit(int Id, string Name, int Age, string Photo, int WeaponId, string Info, HttpPostedFileBase PhotoFile)
+        public string EditHobbit(int Id, string Name, int Age, string Photo, int WeaponId, string Info, string Password, HttpPostedFileBase PhotoFile)
         {
             try
             {
+                if (db.Hobbits.Get((int)Id).Password != Password)
+                    return new RequestResult(ResultCode.HobbitWrongPassword, "Wrong password.").ToJson();
+
                 if (PhotoFile != null)
                 {
                     Photo = new ImageHelper()

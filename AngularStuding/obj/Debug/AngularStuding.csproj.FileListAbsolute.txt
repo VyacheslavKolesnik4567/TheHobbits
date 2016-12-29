@@ -76,3 +76,6 @@ E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bi
 E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Net.Http.Formatting.xml
 E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Http.xml
 E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\bin\System.Web.Http.WebHost.xml
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\obj\Debug\AngularStuding.csproj.GenerateResource.Cache
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\obj\Debug\AngularStuding.Domain.Migrations.InitialCreate.resources
+E:\Институт\4 курс 1 семестр\AngularStuding\AngularStuding\obj\Debug\AngularStuding.Domain.Migrations.addPasword.resources

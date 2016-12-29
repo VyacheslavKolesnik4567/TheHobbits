@@ -29,7 +29,8 @@
             <label>Weapon</label>
             <select required ng-options="option.Name for option in weapons track by option.Id" ng-model="hobbit.Weapon" class="form-group form-control">              
             </select>
-            
+            <label>Password</label>
+            <input type="password" placeholder="Input password" ng-model="hobbit.Password" class="form-group form-control" />
             <label>Info</label>
             <textarea ng-model="hobbit.Info" class="form-group form-control"></textarea>
         </fieldset>
