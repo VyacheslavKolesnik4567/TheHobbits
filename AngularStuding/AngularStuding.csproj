@@ -191,8 +191,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WeaponController.cs" />
     <Compile Include="Core\ImageHelper.cs" />
-    <Compile Include="Core\RequestResult.cs" />
-    <Compile Include="Core\ResultCode.cs" />
+    <Compile Include="Core\Answer.cs" />
+    <Compile Include="Core\AnswerCode.cs" />
     <Compile Include="Core\ToJsonExtension.cs" />
     <Compile Include="Domain\Core\Hobbit.cs" />
     <Compile Include="Domain\Core\Weapon.cs" />

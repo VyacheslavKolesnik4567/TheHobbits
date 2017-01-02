@@ -13,7 +13,7 @@
 <h2>Index</h2>
 <div ng-controller="hobbitsController" class="hobbitsDiv col-md-12 col-lg-12">
     <img src="~/Content/Images/loading.gif" ng-show="loading" class="center-block loadingImg"/>
-    <button ng-show="hobbits!=undefined" class="btn btn-default" ng-click="addHobbit()">Add hobbit</button><br />
+    <button ng-show="hobbits!=undefined" style="color:white;background-color:transparent;" class="btn btn-default" ng-click="addHobbit()">Add hobbit</button><br />
     <hobbits-table ng-show="hobbits!=undefined" source="hobbits"></hobbits-table>
 </div>
 

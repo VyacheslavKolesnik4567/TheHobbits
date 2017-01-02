@@ -1,4 +1,13 @@
-﻿.hobbitPhoto {
+﻿html {
+    width:100%;
+    height:100%;   
+}
+
+body{
+    font-family: Rockwell;
+}
+
+.hobbitPhoto {
     max-height: 70px;
     width: 50px;
 }
@@ -16,6 +25,14 @@
     border-color: none;
 }
 
-.thead th {
+.thead th[filter]{
     cursor: pointer;
+}
+
+.thead th[filter]:hover{
+    background-color:rgba(251, 247, 247, 0.18);
+}
+
+.thead th{
+    text-align: center;
 }

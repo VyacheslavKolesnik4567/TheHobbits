@@ -14,14 +14,14 @@ namespace AngularStuding.Core
                 if (PhotoFile.ContentType != "image/png" && PhotoFile.ContentType != "image/jpeg")
                     throw new Exception("File has wrong type. (Types needed: *.png, *.jpeg)");
 
-                if (File.Exists(server.MapPath("~/Content/Images/" + localName + ".png")))
+                if (File.Exists(server.MapPath("~/Content/Images/Hobbits/" + localName + ".png")))
                 {
                     localName = localName + Guid.NewGuid().ToString() + ".png";
                 }
                 
-                PhotoFile.SaveAs(server.MapPath("~/Content/Images/" + localName + ".png"));
+                PhotoFile.SaveAs(server.MapPath("~/Content/Images/Hobbits/" + localName + ".png"));
 
-                return "Content/Images/" + localName + ".png";
+                return "Content/Images/Hobbits/" + localName + ".png";
             }
             catch(PathTooLongException pathTooLongEx)
             {
@@ -45,14 +45,14 @@ namespace AngularStuding.Core
 
                 var guid = Guid.NewGuid().ToString();
 
-                string localFilename = HttpRuntime.AppDomainAppPath + "/Content/Images/" + localName + guid + ".png";
+                string localFilename = HttpRuntime.AppDomainAppPath + "/Content/Images/Hobbits/" + localName + guid + ".png";
 
                 using (WebClient client = new WebClient())
                 {
                     client.DownloadFile(address, localFilename);
                 }
 
-                return "/Content/Images/" + localName + guid + ".png";
+                return "/Content/Images/Hobbits/" + localName + guid + ".png";
             }
             catch(WebException webEx)
             {

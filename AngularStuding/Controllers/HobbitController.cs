@@ -53,11 +53,11 @@ namespace AngularStuding.Controllers
                 });
                 db.Save();
 
-                return new RequestResult(ResultCode.HobbitCreated).ToJson();
+                return new Answer(AnswerCode.HobbitCreated).ToJson();
             }
             catch (Exception ex)
             {
-                return new RequestResult(ResultCode.Failed, ex.Message).ToJson();
+                return new Answer(AnswerCode.Failed, ex.Message).ToJson();
             }
         }
 
@@ -69,19 +69,19 @@ namespace AngularStuding.Controllers
                 if (id != null)
                 {
                     if (db.Hobbits.Get((int)id).Password != password)
-                        return new RequestResult(ResultCode.HobbitWrongPassword, "Wrong password.").ToJson();
+                        return new Answer(AnswerCode.HobbitWrongPassword, "Wrong password.").ToJson();
                     result = db.Hobbits.Remove((int)id);
                     db.Save();
                     new ImageHelper().RemoveImage(photo);
                 }
                 if (result)
-                    return new RequestResult(ResultCode.HobbitRemoved).ToJson();
+                    return new Answer(AnswerCode.HobbitRemoved).ToJson();
                 else
-                    return new RequestResult(ResultCode.HobbitNotFound, "No hobbit with id = " + id.ToString()).ToJson();
+                    return new Answer(AnswerCode.HobbitNotFound, "No hobbit with id = " + id.ToString()).ToJson();
             }
             catch (Exception ex)
             {
-                return new RequestResult(ResultCode.Failed, ex.Message).ToJson();
+                return new Answer(AnswerCode.Failed, ex.Message).ToJson();
             }
         }
 
@@ -90,7 +90,7 @@ namespace AngularStuding.Controllers
             try
             {
                 if (db.Hobbits.Get((int)Id).Password != Password)
-                    return new RequestResult(ResultCode.HobbitWrongPassword, "Wrong password.").ToJson();
+                    return new Answer(AnswerCode.HobbitWrongPassword, "Wrong password.").ToJson();
 
                 if (PhotoFile != null)
                 {
@@ -114,11 +114,11 @@ namespace AngularStuding.Controllers
                 });
                 db.Save();
                 new ImageHelper().RemoveImage(oldPhoto);
-                return new RequestResult(ResultCode.HobbitUpdated).ToJson();
+                return new Answer(AnswerCode.HobbitUpdated).ToJson();
             }
             catch (Exception ex)
             {
-                return new RequestResult(ResultCode.Failed, ex.Message).ToJson();
+                return new Answer(AnswerCode.Failed, ex.Message).ToJson();
             }
         }
     }

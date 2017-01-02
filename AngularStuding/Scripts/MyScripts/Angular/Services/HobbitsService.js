@@ -1,14 +1,12 @@
 ﻿app.factory("hobbitsService", function ($http) {
     return {
         GetHobbitsAsync: function () {
-            var promise = $http.post("Hobbit/GetHobbits").then(function (response) {
+            return $http.post("Hobbit/GetHobbits").then(function (response) {
                 return response.data;
             });
-
-            return promise;
         },
-
-        AddHobbitAsync: function (hobbit, succesFunc, errorFunc) {
+        
+        AddHobbitAsync: function (hobbit) {
             var formData = new FormData();
             formData.append("PhotoFile", hobbit.PhotoFile);
             formData.append("Age", hobbit.Age);
@@ -21,17 +19,13 @@
             if (hobbit.Photo != undefined)
                 formData.append("Photo", hobbit.Photo);
 
-            $http({
+            return $http({
                 method: "POST", url: "Hobbit/AddHobbit", data: formData, headers: { 'Content-Type': undefined },
                 transformRequest: angular.identity
-            })
-                //Success function
-                .success(succesFunc)
-                //Error function
-                .error(errorFunc);
+            });
         },
 
-        EditHobbitAsync: function (hobbit, succesFunc, errorFunc) {
+        EditHobbitAsync: function (hobbit) {
             var formData = new FormData();
             formData.append("Id", hobbit.Id);
             formData.append("PhotoFile", hobbit.PhotoFile);
@@ -45,20 +39,17 @@
             if (hobbit.NewPhotoLink != undefined)
                 formData.append("Photo", hobbit.NewPhotoLink);
 
-            $http({
+            return $http({
                 method: "POST", url: "Hobbit/EditHobbit", data: formData, headers: { 'Content-Type': undefined },
                 transformRequest: angular.identity
-            })
-                //Success function
-                .success(succesFunc)
-                //Error function
-                .error(errorFunc);
+            });
         },
 
-        RemoveHobbitAsync: function (id, photo, password, successFunc, errorFunc) {
-            $http({ method: "POST", url: "Hobbit/RemoveHobbit", params: { id: id, photo: photo, password: password } })
-            .success(successFunc)
-            .error(errorFunc);
+        RemoveHobbitAsync: function (id, photo, password) {
+            return $http({
+                method: "POST", url: "Hobbit/RemoveHobbit",
+                params: { id: id, photo: photo, password: password }
+            });
         }
     };
 });

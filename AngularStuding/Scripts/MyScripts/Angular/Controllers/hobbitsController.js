@@ -53,9 +53,9 @@
 
         modalInstance.result.then(function (hobbit) {
             //Http request to the server
-            hobbitsService.AddHobbitAsync(hobbit,
+            hobbitsService.AddHobbitAsync(hobbit)
                 //Succes func
-                function (data, status, headers, config) {
+                .success(function (data, status, headers, config) {
                     if (data.Code == 201) {
                         $uibModal.open({
                             templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
@@ -76,10 +76,10 @@
                             },
                             size: 'sm',
                         });
-                },
+                })
                 //Error func
-                function (data, status, headers, config) {
-                    var message = status == 500 ? "File is too big. Max file size 4Mb." : "Problems with server connection.";
+                .error(function (data, status, headers, config) {
+                    var message = status == 500 ? "File is too big. Max file size 4Mb." : "Problems with the server connection.";
                     $uibModal.open({
                         templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
                         animation: true,
@@ -110,46 +110,46 @@
 
         modalInstance.result.then(function (hobbit) {
             //Http request to the server
-            hobbitsService.EditHobbitAsync(hobbit,
-                //Success func
-                function (data, status, headers, config) {
-                    if (data.Code == 203) {
-                        $uibModal.open({
-                            templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
-                            animation: true,
-                            controller: function ($scope) {
-                                $scope.message = { Status: "Success", Description: "Hobbit updated succesfully." };
-                            },
-                            size: 'sm',
-                        });
-                        //Update hobbits table
-                        hobbitsLoad();
-                    }
-                    else {
-                        $uibModal.open({
-                            templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
-                            animation: true,
-                            controller: function ($scope) {
-                                $scope.message = {
-                                    Status: "Failed", Description: "Hobbit didn't updated. " + data.Description
-                                };
-                            },
-                            size: 'sm',
-                        });
-                    }
-                },
-                //Error func
-                function (data, status, headers, config) {
-                    var message = status == 500 ? "File is too big. Max file size 4Mb." : "Problems with server connection.";
+            hobbitsService.EditHobbitAsync(hobbit)
+            //Success func
+            .success(function (data, status, headers, config) {
+                if (data.Code == 203) {
                     $uibModal.open({
                         templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
                         animation: true,
                         controller: function ($scope) {
-                            $scope.message = { Status: "Failed", Description: "Hobbit didn't updated. " + message };
+                            $scope.message = { Status: "Success", Description: "Hobbit updated succesfully." };
                         },
                         size: 'sm',
                     });
+                    //Update hobbits table
+                    hobbitsLoad();
+                }
+                else {
+                    $uibModal.open({
+                        templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
+                        animation: true,
+                        controller: function ($scope) {
+                            $scope.message = {
+                                Status: "Failed", Description: "Hobbit didn't updated. " + data.Description
+                            };
+                        },
+                        size: 'sm',
+                    });
+                }
+            })
+            //Error func
+            .error(function (data, status, headers, config) {
+                var message = status == 500 ? "File is too big. Max file size 4Mb." : "Problems with the server connection.";
+                $uibModal.open({
+                    templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
+                    animation: true,
+                    controller: function ($scope) {
+                        $scope.message = { Status: "Failed", Description: "Hobbit didn't updated. " + message };
+                    },
+                    size: 'sm',
                 });
+            });
         });
     };
 
@@ -170,43 +170,43 @@
 
         modalInstance.result.then(function (password) {
             //Http request to the server
-            hobbitsService.RemoveHobbitAsync(id, photo, password, 
-                //Success function
-                function (data, status, headers, config) {
-                    if (data.Code == 202) {
-                        $uibModal.open({
-                            templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
-                            animation: true,
-                            controller: function ($scope) {
-                                $scope.message = { Status: "Success", Description: "Hobbit removed succesfully." };
-                            },
-                            size: 'sm',
-                        });
-                        hobbitsLoad();
-                    }
-                    else
-                        $uibModal.open({
-                            templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
-                            animation: true,
-                            controller: function ($scope) {
-                                $scope.message = {
-                                    Status: "Failed", Description: "Hobbit didn't removed. " + data.Description
-                                };
-                            },
-                            size: 'sm',
-                        });
-                },
-                //Error function
-                function (data, status, headers, config) {
+            hobbitsService.RemoveHobbitAsync(id, photo, password)
+            //Success function
+            .success(function (data, status, headers, config) {
+                if (data.Code == 202) {
                     $uibModal.open({
                         templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
                         animation: true,
                         controller: function ($scope) {
-                            $scope.message = { Status: "Failed", Description: "Hobbit didn't removed. Problems with server connection." }
+                            $scope.message = { Status: "Success", Description: "Hobbit removed succesfully." };
                         },
                         size: 'sm',
                     });
+                    hobbitsLoad();
+                }
+                else
+                    $uibModal.open({
+                        templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
+                        animation: true,
+                        controller: function ($scope) {
+                            $scope.message = {
+                                Status: "Failed", Description: "Hobbit didn't removed. " + data.Description
+                            };
+                        },
+                        size: 'sm',
+                    });
+            })
+            //Error function
+            .error(function (data, status, headers, config) {
+                $uibModal.open({
+                    templateUrl: "Scripts/MyScripts/Angular/Templates/message.html",
+                    animation: true,
+                    controller: function ($scope) {
+                        $scope.message = { Status: "Failed", Description: "Hobbit didn't removed. Problems with the server connection." }
+                    },
+                    size: 'sm',
                 });
+            });
         })
     }
 });
